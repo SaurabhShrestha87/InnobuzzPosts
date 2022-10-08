@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.innobuzz.postapp.ui.FirstFragment"
+        android:label="first frag"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_first_to_second"
+            app:destination="@id/flavorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flavorFragment"
+        android:name="com.innobuzz.postapp.ui.SecondFragment"
+        android:label="second frag"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_second_to_first"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_pop_second"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
